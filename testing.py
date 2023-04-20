@@ -1,32 +1,31 @@
-import Laboratorio4;
+import Laboratorio7;
 import pytest;
-    
-def test_convertirDecHex_1():
-    assert Laboratorio4.convertirDecHex(5) == '5'
-    
-def test_convertirDecHex_2():
-    assert Laboratorio4.convertirDecHex(10) == 'A'
-    
-def test_convertirDecHex_3():
-    assert Laboratorio4.convertirDecHex(25) == '19'
-    
-def test_convertirDecHex_4():
-    assert Laboratorio4.convertirDecHex(30) == '1E'
-    
-def test_convertirDecHex_5():
-    assert Laboratorio4.convertirDecHex(300) == '12C'
 
-def test_convertirHexDec_1():
-    assert Laboratorio4.convertirHexDec('5') == 5
+matriz = [[2,4,6,8,10], [1,3,5,7,9], [4,8,12,16,20], [0,0,0,0,0], [5,10,5,10,5]]
+
+def test_cortarMatriz_1():
+    assert Laboratorio7.cortarMatriz(matriz, 2, 3) == [[2,4,6], [1,3,5]]
     
-def test_convertirHexDec_2():
-    assert Laboratorio4.convertirHexDec('A') == 10
+def test_cortarMatriz_2():
+    assert Laboratorio7.cortarMatriz(matriz, 2, 2) == [[2,4], [1,3]]
     
-def test_convertirHexDec_3():
-    assert Laboratorio4.convertirHexDec('19') == 25
+def test_cortarMatriz_3():
+    assert Laboratorio7.cortarMatriz(matriz, 5, 5) == [[2,4,6,8,10], [1,3,5,7,9], [4,8,12,16,20], [0,0,0,0,0], [5,10,5,10,5]]
     
-def test_convertirHexDec_4():
-    assert Laboratorio4.convertirHexDec('1E') == 30
+def test_cortarMatriz_4():
+    assert  isinstance( str(Laboratorio7.cortarMatriz(matriz, 8, 5)), str) == isinstance('Error: los valores de la nueva matriz exceden las dimensiones actuales', str)
     
-def test_convertirHexDec_5():
-    assert Laboratorio4.convertirHexDec('12C') == 300
+    
+matriz = [[2,4,6,8,10], [1,3,5,7,9], [4,8,12,16,20], [10,20,30,40,50], [5,10,15,20,25]]
+
+def test_cortarMatriz_1():
+    assert Laboratorio7.cortarMatriz_v2(matriz, 2, 3, 2, 2) == [ [16,20], [40,50] ]
+    
+def test_cortarMatriz_1():
+    assert Laboratorio7.cortarMatriz_v2(matriz, 2, 0, 2, 2) == [ [4,8], [10,20] ]
+    
+def test_cortarMatriz_1():
+    assert Laboratorio7.cortarMatriz_v2(matriz, 0,0,5,5) == [[2,4,6,8,10], [1,3,5,7,9], [4,8,12,16,20], [10,20,30,40,50], [5,10,15,20,25]]
+    
+def test_cortarMatriz_4():
+    assert  isinstance( str(Laboratorio7.cortarMatriz_v2(matriz, 2, 1, 6, 6), str) == isinstance('Error: los valores de la nueva matriz exceden las dimensiones actuales', str)
