@@ -28,7 +28,7 @@ def test_cortarMatrizv2_3():
     assert Laboratorio7.cortarMatriz_v2(matriz2, 0,0,5,5) == [[2,4,6,8,10], [1,3,5,7,9], [4,8,12,16,20], [10,20,30,40,50], [5,10,15,20,25]]
     
 def test_cortarMatrizv2_4():
-    assert  isinstance( str(Laboratorio7.cortarMatriz_v2(matriz2, 2, 1, 6, 6), str)) == isinstance('Error: los valores de la nueva matriz exceden las dimensiones actuales', str)
+    assert  isinstance( str(Laboratorio7.cortarMatriz_v2(matriz2, 2, 1, 6, 6)), str) == isinstance('Error: los valores de la nueva matriz exceden las dimensiones actuales', str)
 
 
 ###########################################################################################                       
